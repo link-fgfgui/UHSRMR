@@ -6,13 +6,197 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>489</width>
+    <height>200</height>
    </rect>
   </property>
-  <property name="windowTitle">
-   <string>Widget</string>
+  <property name="font">
+   <font>
+    <family>微软雅黑</family>
+    <pointsize>12</pointsize>
+   </font>
   </property>
+  <property name="windowTitle">
+   <string>崩铁多开限制解除</string>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_2">
+   <item row="0" column="0">
+    <layout class="QGridLayout" name="gridLayout" rowstretch="0,1,0" columnstretch="0,1,0" rowminimumheight="0,0,0">
+     <item row="0" column="1">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QWidget" name="widget" native="true">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_fuck">
+          <property name="text">
+           <string>解限</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_exec">
+          <item>
+           <widget class="QComboBox" name="comboBox_choose">
+            <item>
+             <property name="text">
+              <string>恢复双开限制</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>打开网络连接面板</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开游戏</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开双服</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开游戏(防火墙版本)(实验性)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开双服(防火墙版本)(实验性)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>刷新下方检测结果</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>添加客户端</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>关闭网络</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>开启网络</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>关闭网络(防火墙)(第一区服)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>开启网络(防火墙)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>开启游戏(第一区服)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>开启游戏(第二区服)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开游戏(第二区服)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>一键双开游戏(防火墙版本)(第二区服)</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>关闭网络(防火墙)(第二区服)</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_exec">
+            <property name="text">
+             <string>执行</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_info">
+          <property name="text">
+           <string>initializing</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <spacer name="verticalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>10</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="0">
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="2">
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Orientation::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>10</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections/>
