@@ -26,9 +26,9 @@ FORMS += \
     widget.ui
 
 TRANSLATIONS += \
-    FsMsR_zh_CN.ts \
-    FsMsR_en_US.ts \
-    FsMsR_zh_TW.ts
+    UHSRMR_zh_CN.ts \
+    UHSRMR_en_US.ts \
+    UHSRMR_zh_TW.ts
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -39,3 +39,7 @@ RESOURCES += \
    qrc.qrc
 
 RC_FILE += res.rc
+
+DISTFILES += \
+    res.rc \
+    uac.manifest

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>489</width>
+    <width>509</width>
     <height>200</height>
    </rect>
   </property>
@@ -39,7 +39,7 @@
       <widget class="QWidget" name="widget" native="true">
        <layout class="QVBoxLayout" name="verticalLayout">
         <item>
-         <widget class="QPushButton" name="pushButton_fuck">
+         <widget class="QPushButton" name="pushButton_unlock">
           <property name="text">
            <string>解限</string>
           </property>
@@ -71,12 +71,12 @@
             </item>
             <item>
              <property name="text">
-              <string>一键双开游戏(防火墙版本)(实验性)</string>
+              <string>一键双开游戏(防火墙版本)</string>
              </property>
             </item>
             <item>
              <property name="text">
-              <string>一键双开双服(防火墙版本)(实验性)</string>
+              <string>一键双开双服(防火墙版本)</string>
              </property>
             </item>
             <item>

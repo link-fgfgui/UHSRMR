@@ -4,7 +4,7 @@
 #include <QApplication>
 
 
-QString version = "0.7";
+QString version = "1.0";
 
 
 void customMessageHandler(QtMsgType type, const QMessageLogContext&, const QString& str)
@@ -29,16 +29,14 @@ void customMessageHandler(QtMsgType type, const QMessageLogContext&, const QStri
 
 int main(int argc, char* argv[])
 {
-    // qCDebug(FsMsR) << Widget::getRuningClientPath(false);
-    // exit(0);
     QTranslator translator;
-    translator.load(QLocale(), "FsMsR", "_", ":/trans", ".qm");
+    translator.load(QLocale(), "UHSRMR", "_", ":/trans", ".qm");
     QApplication a(argc, argv);
     QCoreApplication::installTranslator(&translator);
     // anti multi-boxing
     if (argc == 1)
     {
-        HANDLE Mutex  =  CreateMutex(NULL, FALSE,  L"FsMsR_anti_multi");
+        HANDLE Mutex  =  CreateMutex(NULL, FALSE,  L"UHSRMR_anti_multi");
         if (GetLastError()  ==  ERROR_ALREADY_EXISTS)
         {
             CloseHandle(Mutex);
@@ -48,7 +46,7 @@ int main(int argc, char* argv[])
         }
     }
     qInstallMessageHandler(customMessageHandler);
-    QMessageBox::information(NULL, "FsMsR", "By:\nKarami\nflatied@foxmail.com\nlink-fgfgui\nlink.fgfgui@gmail.com");
+    QMessageBox::information(NULL, "UHSRMR", "By:\nKarami\nflatied@foxmail.com\nlink-fgfgui\nlink.fgfgui@gmail.com");
     Widget w;
     w.setWindowTitle(QObject::tr("崩铁解除双开限制 v") + version);
     w.show();

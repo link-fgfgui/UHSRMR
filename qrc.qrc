@@ -3,8 +3,8 @@
         <file>mhypbase.dll</file>
     </qresource>
     <qresource prefix="/trans">
-        <file>FsMsR_en_US.qm</file>
-        <file>FsMsR_zh_CN.qm</file>
-        <file>FsMsR_zh_TW.qm</file>
+        <file>UHSRMR_en_US.qm</file>
+        <file>UHSRMR_zh_TW.qm</file>
+        <file>UHSRMR_zh_CN.qm</file>
     </qresource>
 </RCC>

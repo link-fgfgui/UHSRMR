@@ -1,12 +1,13 @@
 #include "widget.h"
 #include "ui_widget.h"
-Q_LOGGING_CATEGORY(FsMsR, "FsMsR")
+Q_LOGGING_CATEGORY(UHSRMR, "UHSRMR")
 Widget::Widget(QWidget* parent)
     : QWidget(parent)
     , ui(new Ui::Widget)
 {
     ui->setupUi(this);
-    qCDebug(FsMsR) << "loading configs";
+    qCDebug(UHSRMR
+    ) << "loading configs";
     network = new QStringList();
     file_choose = new QFile("选择.txt");
     file_path2 = new QFile("路径2.txt");
@@ -15,27 +16,27 @@ Widget::Widget(QWidget* parent)
     loadConfig(file_path, PATH1);
     loadConfig(file_path2, PATH2);
     config = new QSettings("conf.ini", QSettings::IniFormat);
-    t11 = config->value("FsMsR/t11", 8000).toInt();
-    t12 = config->value("FsMsR/t12", 9000).toInt();
-    t13 = config->value("FsMsR/t13", 18000).toInt();
-    t21 = config->value("FsMsR/t21", 7000).toInt();
-    t22 = config->value("FsMsR/t22", 7500).toInt();
-    t23 = config->value("FsMsR/t23", 11500).toInt();
-    t24 = config->value("FsMsR/t24", 13000).toInt();
-    if (config->contains("FsMsR/choose")) choose = config->value("FsMsR/choose").toInt();
+    t11 = config->value("UHSRMR/t11", 8000).toInt();
+    t12 = config->value("UHSRMR/t12", 9000).toInt();
+    t13 = config->value("UHSRMR/t13", 18000).toInt();
+    t21 = config->value("UHSRMR/t21", 7000).toInt();
+    t22 = config->value("UHSRMR/t22", 7500).toInt();
+    t23 = config->value("UHSRMR/t23", 11500).toInt();
+    t24 = config->value("UHSRMR/t24", 13000).toInt();
+    if (config->contains("UHSRMR/choose")) choose = config->value("UHSRMR/choose").toInt();
 
-    if (config->contains("FsMsR/path1")) path1 = config->value("FsMsR/path1").toString();
+    if (config->contains("UHSRMR/path1")) path1 = config->value("UHSRMR/path1").toString();
 
-    if (config->contains("FsMsR/path2")) path2 = config->value("FsMsR/path2").toString();
+    if (config->contains("UHSRMR/path2")) path2 = config->value("UHSRMR/path2").toString();
 
-    if (dllUrlVersion > config->value("FsMsR/dllUrlVersion").toInt())
+    if (dllUrlVersion > config->value("UHSRMR/dllUrlVersion").toInt())
     {
-        config->setValue("FsMsR/dllUrlVersion", dllUrlVersion);
-        config->setValue("FsMsR/dllUrl", dllUrl);
+        config->setValue("UHSRMR/dllUrlVersion", dllUrlVersion);
+        config->setValue("UHSRMR/dllUrl", dllUrl);
     }
     else
     {
-        dllUrl = config->value("FsMsR/dllUrl").toString();
+        dllUrl = config->value("UHSRMR/dllUrl").toString();
     }
 
     if (path1.isEmpty())
@@ -45,7 +46,7 @@ Widget::Widget(QWidget* parent)
         if (!QFile::exists(tmp))tmp = "D:\\collapse\\SRCN\\Games\\StarRail.exe";
         if (QFile::exists(tmp))
         {
-            qCDebug(FsMsR) << "get mihoyo launcher: " << tmp;
+            qCDebug(UHSRMR) << "get mihoyo launcher: " << tmp;
             QMessageBox::information(nullptr, tr("信息"), tr("检测到米哈游启动器,将自动为您解除限制并添加至第一区服"));
             path1 = tmp;
             unlock();
@@ -58,26 +59,26 @@ Widget::Widget(QWidget* parent)
     connect(ui->comboBox_choose, &QComboBox::currentIndexChanged, [ = ](int i)
     {
         choose = i;
-        qCDebug(FsMsR) << "choose changed:" << choose;
+        qCDebug(UHSRMR) << "choose changed:" << choose;
     });
     connect(ui->pushButton_exec, &QPushButton::clicked, this, run);
-    connect(ui->pushButton_fuck, &QPushButton::clicked, this, unlock);
+    connect(ui->pushButton_unlock, &QPushButton::clicked, this, unlock);
     refreshTip();
 }
 void Widget::save()
 {
-    config->setValue("FsMsR/choose", choose);
-    config->setValue("FsMsR/path1", path1);
-    config->setValue("FsMsR/path2", path2);
-    config->setValue("FsMsR/t11", t11);
-    config->setValue("FsMsR/t12", t12);
-    config->setValue("FsMsR/t13", t13);
-    config->setValue("FsMsR/t21", t21);
-    config->setValue("FsMsR/t22", t22);
-    config->setValue("FsMsR/t23", t23);
-    config->setValue("FsMsR/t24", t24);
+    config->setValue("UHSRMR/choose", choose);
+    config->setValue("UHSRMR/path1", path1);
+    config->setValue("UHSRMR/path2", path2);
+    config->setValue("UHSRMR/t11", t11);
+    config->setValue("UHSRMR/t12", t12);
+    config->setValue("UHSRMR/t13", t13);
+    config->setValue("UHSRMR/t21", t21);
+    config->setValue("UHSRMR/t22", t22);
+    config->setValue("UHSRMR/t23", t23);
+    config->setValue("UHSRMR/t24", t24);
     config->sync();
-    qCDebug(FsMsR) << "saved!";
+    qCDebug(UHSRMR) << "saved!";
 }
 
 
@@ -99,7 +100,7 @@ void Widget::loadConfig(QFile* ptr, int type)
         QTextStream ts(ptr);
         ts.setEncoding(QStringConverter::System);
         QString tmp = ts.readAll();
-        qCDebug(FsMsR) << "type:" << type << "|" << tmp << ";";
+        qCDebug(UHSRMR) << "type:" << type << "|" << tmp << ";";
         if (tmp.isEmpty())
         {
             if (type == CHOOSE)
@@ -130,7 +131,7 @@ void Widget::loadConfig(QFile* ptr, int type)
 void Widget::refreshTip()
 {
     QString outText;
-    qCDebug(FsMsR) << "refreshTip";
+    qCDebug(UHSRMR) << "refreshTip";
     if (path1.isEmpty())
     {
         outText.append(tr("第一区服未设置,将无法使用一键双开功能\n"));
@@ -144,7 +145,7 @@ void Widget::refreshTip()
         outText = tr("一切正常\n");
     }
     outText.append(tr("本程序完全免费  谨防倒卖!\n"));
-    outText.append("Fu*k StarRail Multi-Start Restrict");
+    outText.append("Unlocking Honkai Star Rail's Multi-clienting Restriction");
     ui->label_info->setText(outText);
 }
 
@@ -159,16 +160,16 @@ void Widget::getNI()
     process.start();
     process.waitForFinished();
     QString temp = QString::fromLocal8Bit(process.readAllStandardOutput());
-    // qCDebug(FsMsR) << temp;
+    // qCDebug(UHSRMR) << temp;
     QStringList rows = temp.split("\r\n");
-    // qCDebug(FsMsR) << rows;
+    // qCDebug(UHSRMR) << rows;
     for (int i = 3 ; i < rows.length(); i++)
     {
         if (rows[i].isEmpty())break;
         QStringList col = rows[i].split("  ");
         network->append(col.last().trimmed());
     }
-    qCDebug(FsMsR) << *network;
+    qCDebug(UHSRMR) << *network;
 };
 
 void Widget::run()
@@ -176,7 +177,7 @@ void Widget::run()
 
     ui->pushButton_exec->setDisabled(true);
     int type = ui->comboBox_choose->currentIndex();
-    qCDebug(FsMsR) << "run! type:" << type;
+    qCDebug(UHSRMR) << "run! type:" << type;
     if (type == 6)
     {
         refreshTip();
@@ -249,7 +250,7 @@ void Widget::run()
     if (type == 0)
     {
 
-        qCDebug(FsMsR) << "lock!";
+        qCDebug(UHSRMR) << "lock!";
 
         if (path1.isEmpty())
         {
@@ -390,8 +391,8 @@ void Widget::allowByFirewall()
 
 void Widget::unlock()
 {
-    qCDebug(FsMsR) << "unlock!";
-    ui->pushButton_fuck->setDisabled(true);
+    qCDebug(UHSRMR) << "unlock!";
+    ui->pushButton_unlock->setDisabled(true);
     auto path_now = getRuningClientPath(true);
     addClient(path_now);
     if (path_now.isEmpty())
@@ -399,7 +400,7 @@ void Widget::unlock()
         if (path1.isEmpty())
         {
             QMessageBox::critical(nullptr, tr("错误"), tr("请先开启崩铁"));
-            ui->pushButton_fuck->setEnabled(true);
+            ui->pushButton_unlock->setEnabled(true);
             return;
         }
         else
@@ -407,13 +408,13 @@ void Widget::unlock()
             path_now = path1;
         }
     }
-    unlockcore(path1);
+    unlockcore(path_now);
     if (!path2.isEmpty())unlockcore(path2);
 
     QMessageBox::information(nullptr, tr("信息"), tr("完成"));
     refreshTip();
 
-    ui->pushButton_fuck->setEnabled(true);
+    ui->pushButton_unlock->setEnabled(true);
 }
 void Widget::unlockcore(QString path_)
 {
@@ -425,7 +426,7 @@ void Widget::unlockcore(QString path_)
 
 void Widget::addClient(QString ProgramPath)
 {
-    qCDebug(FsMsR) << "addClient!";
+    qCDebug(UHSRMR) << "addClient!";
     QString pathtemp;
     if (ProgramPath.isEmpty())
     {
@@ -438,7 +439,7 @@ void Widget::addClient(QString ProgramPath)
 
     if (pathtemp.isEmpty())
     {
-        if (ui->pushButton_fuck->isEnabled())
+        if (ui->pushButton_unlock->isEnabled())
         {
             QMessageBox::critical(nullptr, tr("错误"), tr("未找到崩铁客户端,请先启动"));
         }
@@ -465,9 +466,9 @@ void Widget::addClient(QString ProgramPath)
 
 void Widget::start(QString ProgramPath)
 {
-    // qCDebug(FsMsR) << ProgramPath[0];
+    // qCDebug(UHSRMR) << ProgramPath[0];
     // if (ProgramPath[0] != '"' && ProgramPath.contains(" ") && ProgramPath[0] != 'n')ProgramPath = QChar('"') + ProgramPath + QChar('"');
-    qCDebug(FsMsR) << "start:" << (QString("cmd /C ") + ProgramPath).toStdString().c_str();
+    qCDebug(UHSRMR) << "start:" << (QString("cmd /C ") + ProgramPath).toStdString().c_str();
     WinExec((QString("cmd /C ") + ProgramPath).toLocal8Bit().toStdString().c_str(), SW_HIDE);
 }
 QString Widget::getRuningClientPath(bool isKill)
@@ -486,13 +487,13 @@ QString Widget::getRuningClientPath(bool isKill)
             if (filename == QString("StarRail.exe"))
             {
                 pid = pe32.th32ProcessID;
-                qCDebug(FsMsR) << "get pid:" << pid;
+                qCDebug(UHSRMR) << "get pid:" << pid;
                 HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_TERMINATE, FALSE, pid);
                 TCHAR ProcessPath[MAX_PATH];
                 DWORD pathLength = sizeof(ProcessPath) / sizeof(TCHAR);
                 QueryFullProcessImageName(hProcess, 0, ProcessPath, &pathLength);
                 path_now = QString::fromStdWString(std::wstring(ProcessPath));
-                qCDebug(FsMsR) << "get path:" << path_now;
+                qCDebug(UHSRMR) << "get path:" << path_now;
                 if (isKill)
                 {
                     TerminateProcess(hProcess, 0);

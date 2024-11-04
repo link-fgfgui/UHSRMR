@@ -4,9 +4,9 @@
 <context>
     <name>QObject</name>
     <message>
-        <location filename="main.cpp" line="47"/>
+        <location filename="main.cpp" line="51"/>
         <source>崩铁解除双开限制 v</source>
-        <translation></translation>
+        <translation>解除崩铁双开限制 v</translation>
     </message>
 </context>
 <context>
@@ -14,7 +14,7 @@
     <message>
         <location filename="widget.ui" line="20"/>
         <source>崩铁多开限制解除</source>
-        <translation></translation>
+        <translation>解除崩铁双开限制</translation>
     </message>
     <message>
         <location filename="widget.ui" line="44"/>
@@ -43,12 +43,14 @@
     </message>
     <message>
         <location filename="widget.ui" line="74"/>
-        <source>一键双开游戏(防火墙版本)(实验性)</source>
+        <source>一键双开游戏(防火墙版本)</source>
+        <oldsource>一键双开游戏(防火墙版本)(实验性)</oldsource>
         <translation></translation>
     </message>
     <message>
         <location filename="widget.ui" line="79"/>
-        <source>一键双开双服(防火墙版本)(实验性)</source>
+        <source>一键双开双服(防火墙版本)</source>
+        <oldsource>一键双开双服(防火墙版本)(实验性)</oldsource>
         <translation></translation>
     </message>
     <message>
@@ -83,111 +85,142 @@
     </message>
     <message>
         <location filename="widget.ui" line="114"/>
-        <source>关闭崩铁句柄(未实现)</source>
+        <source>开启游戏(第一区服)</source>
+        <oldsource>关闭崩铁句柄(未实现)</oldsource>
         <translation></translation>
     </message>
     <message>
         <location filename="widget.ui" line="119"/>
-        <source>关闭原神句柄(未实现)</source>
+        <source>开启游戏(第二区服)</source>
+        <oldsource>关闭原神句柄(未实现)</oldsource>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="127"/>
+        <location filename="widget.ui" line="124"/>
+        <source>一键双开游戏(第二区服)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="129"/>
+        <source>一键双开游戏(防火墙版本)(第二区服)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="134"/>
+        <source>关闭网络(防火墙)(第二区服)</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widget.ui" line="142"/>
         <source>执行</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.ui" line="136"/>
+        <location filename="widget.ui" line="151"/>
         <source>initializing</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="93"/>
+        <location filename="widget.cpp" line="137"/>
         <source>第一区服未设置,将无法使用一键双开功能
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="97"/>
+        <location filename="widget.cpp" line="141"/>
         <source>第二区服未设置,将无法使用一键双开双服功能
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="101"/>
+        <location filename="widget.cpp" line="145"/>
         <source>一切正常
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="103"/>
+        <location filename="widget.cpp" line="147"/>
         <source>本程序完全免费  谨防倒卖!
 </source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="140"/>
+        <location filename="widget.cpp" line="184"/>
         <source>提示</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="140"/>
-        <location filename="widget.cpp" line="340"/>
-        <location filename="widget.cpp" line="349"/>
+        <location filename="widget.cpp" line="184"/>
+        <location filename="widget.cpp" line="452"/>
+        <location filename="widget.cpp" line="461"/>
         <source>成功</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="169"/>
-        <location filename="widget.cpp" line="188"/>
-        <location filename="widget.cpp" line="199"/>
-        <location filename="widget.cpp" line="209"/>
-        <location filename="widget.cpp" line="219"/>
-        <location filename="widget.cpp" line="299"/>
-        <location filename="widget.cpp" line="333"/>
+        <location filename="widget.cpp" line="210"/>
+        <location filename="widget.cpp" line="220"/>
+        <location filename="widget.cpp" line="230"/>
+        <location filename="widget.cpp" line="240"/>
+        <location filename="widget.cpp" line="257"/>
+        <location filename="widget.cpp" line="280"/>
+        <location filename="widget.cpp" line="291"/>
+        <location filename="widget.cpp" line="301"/>
+        <location filename="widget.cpp" line="311"/>
+        <location filename="widget.cpp" line="402"/>
+        <location filename="widget.cpp" line="444"/>
         <source>错误</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="169"/>
-        <location filename="widget.cpp" line="188"/>
-        <location filename="widget.cpp" line="199"/>
-        <location filename="widget.cpp" line="209"/>
-        <location filename="widget.cpp" line="219"/>
+        <location filename="widget.cpp" line="210"/>
+        <location filename="widget.cpp" line="220"/>
+        <location filename="widget.cpp" line="230"/>
+        <location filename="widget.cpp" line="240"/>
+        <location filename="widget.cpp" line="257"/>
+        <location filename="widget.cpp" line="280"/>
+        <location filename="widget.cpp" line="291"/>
+        <location filename="widget.cpp" line="301"/>
+        <location filename="widget.cpp" line="311"/>
         <source>未添加客户端</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="176"/>
-        <location filename="widget.cpp" line="313"/>
-        <location filename="widget.cpp" line="344"/>
+        <location filename="widget.cpp" line="50"/>
+        <location filename="widget.cpp" line="270"/>
+        <location filename="widget.cpp" line="414"/>
+        <location filename="widget.cpp" line="456"/>
         <source>信息</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="176"/>
-        <location filename="widget.cpp" line="313"/>
+        <location filename="widget.cpp" line="50"/>
+        <source>检测到米哈游启动器,将自动为您解除限制并添加至第一区服</source>
+        <translation></translation>
+    </message>
+    <message>
+        <location filename="widget.cpp" line="270"/>
+        <location filename="widget.cpp" line="414"/>
         <source>完成</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="299"/>
+        <location filename="widget.cpp" line="402"/>
         <source>请先开启崩铁</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="333"/>
+        <location filename="widget.cpp" line="444"/>
         <source>未找到崩铁客户端,请先启动</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="340"/>
-        <location filename="widget.cpp" line="349"/>
+        <location filename="widget.cpp" line="452"/>
+        <location filename="widget.cpp" line="461"/>
         <source>成功添加游戏</source>
         <translation></translation>
     </message>
     <message>
-        <location filename="widget.cpp" line="344"/>
+        <location filename="widget.cpp" line="456"/>
         <source>您已添加此客户端</source>
         <translation></translation>
     </message>
